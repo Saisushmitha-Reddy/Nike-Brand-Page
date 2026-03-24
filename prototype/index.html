@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nike Membership AI Coach Prototype</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">NIKE MEMBERSHIP</div>
+      <div class="badge">AI PM Prototype</div>
+    </header>
+
+    <main class="layout">
+      <section class="panel input-panel">
+        <h1>AI Coach Brief Builder</h1>
+        <p>
+          Simulate a member profile and generate weekly Nike product
+          recommendations with explainable reasoning.
+        </p>
+
+        <form id="member-form">
+          <label>
+            Member Goal
+            <select id="goal" required>
+              <option value="run">Run Faster</option>
+              <option value="train">Strength Training</option>
+              <option value="lifestyle">Lifestyle & Everyday</option>
+              <option value="basketball">Basketball Performance</option>
+            </select>
+          </label>
+
+          <label>
+            Activity Level
+            <select id="activity" required>
+              <option value="low">1-2 sessions / week</option>
+              <option value="medium" selected>3-4 sessions / week</option>
+              <option value="high">5+ sessions / week</option>
+            </select>
+          </label>
+
+          <label>
+            Weekly Budget
+            <select id="budget" required>
+              <option value="low">Under $120</option>
+              <option value="mid" selected>$120 - $250</option>
+              <option value="high">$250+</option>
+            </select>
+          </label>
+
+          <label>
+            Weather Context
+            <select id="weather" required>
+              <option value="warm">Warm / Dry</option>
+              <option value="cold">Cold</option>
+              <option value="rain">Rainy / Wet</option>
+            </select>
+          </label>
+
+          <button type="submit">Generate AI Recommendations</button>
+        </form>
+
+        <div class="metric-strip" id="metric-strip">
+          <article>
+            <h3>Pred. CTR Lift</h3>
+            <p id="ctr-lift">--</p>
+          </article>
+          <article>
+            <h3>Pred. Add-to-Bag Lift</h3>
+            <p id="atb-lift">--</p>
+          </article>
+          <article>
+            <h3>Pred. Return Risk</h3>
+            <p id="return-risk">--</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel output-panel">
+        <div class="output-header">
+          <h2>Weekly AI Coach Recommendations</h2>
+          <span id="state-chip" class="state-chip">Awaiting Input</span>
+        </div>
+
+        <div id="results" class="results empty-state">
+          Build a profile and click <strong>Generate AI Recommendations</strong>.
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
